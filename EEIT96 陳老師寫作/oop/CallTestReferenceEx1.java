@@ -25,6 +25,17 @@ public class CallTestReferenceEx1 {
 		
 		System.out.println("yourShirt.price=" + yourShirt.price);
 		System.out.println("yourShirt.size=" + yourShirt.size);
+		
+		yourShirt = myShirt;
+		
+		yourShirt.price = 8000;
+		yourShirt.size = 'X';
+		
+		System.out.println("myShirt_1=" + myShirt);
+		System.out.println("yourShirt_1=" + yourShirt);
+		
+		System.out.println("myShirt.price_1=" + myShirt.price);
+		System.out.println("myShirt.size_1=" + myShirt.size);
 	}
 
 }
