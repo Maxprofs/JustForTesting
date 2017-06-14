@@ -13,6 +13,10 @@ class Cat extends Mammal{
 		System.out.println("Cat eats Fish and Rat.");
 	}
 	
+	public void jumpAway(){
+		System.out.println("Cat jumps away.");
+	}
+	
 }
 
 class Dog extends Mammal{
@@ -20,6 +24,10 @@ class Dog extends Mammal{
 	@Override
 	public void eat() {
 		System.out.println("Dog eats Bone.");
+	}
+	
+	public void biteBall(){
+		System.out.println("Dog bites Ball.");
 	}
 	
 }
