@@ -1,0 +1,10 @@
+﻿body {
+}
+ h2 {
+            color:blue;
+            text-decoration:underline;
+        }
+ h3 {
+            color:orange;
+            text-transform:uppercase;
+        }

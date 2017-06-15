@@ -1,0 +1,44 @@
+doc
+  http://mail.mcjh.kl.edu.tw/~lin/teach/files/filename_other
+
+
+----------------------------------
+
+
+其他參考文章：
+
+windows採用的副檔名是檔案開啟方式的一個重要判定依據，當我們針對windows檔案雙擊後，程式就會自動開啟執行
+
+例如當我們針對副檔名為bmp的檔案雙擊滑鼠後，小畫家就會被開啟，雙擊副檔名為txt的檔案時，記事本會被開啟並將檔案讀入
+
+而windows所利用的方式就是以檔案的副檔名為啟動讀取程式的呼叫依據，而windows有辦法分辨不同的副檔名，達成不同的檔案格式啟動不同的執行程式
+
+藉由Registry內的關連設定---
+
+首先啟動【開始】鍵,按【執行】後,鍵入regedit 打開登錄檔，進入HKEY_CLASSES_ROOT後最先看到以"."為開頭的都是副檔名登錄設定處,
+找到".txt"後進入,可以發現其預設的資料為"txtfile",
+ 
+  --> .sql                        -> ssms.sql.11.0
+
+這表示".txt"副檔名的相關資訊被放置在txtfile的底下,再繼續找到HKEY_CLASSES_ROOT\txtfile,
+
+                                                                             \ssms.sql.11.0
+
+進入後會發現其預設值為"純文字文件",這個訊息就是我們在檔案總管裡所看到的檔案類型的訊息,
+如果你把這幾個字修改,下次開機再看到的檔案類型,就會變成你所修改的文字了
+
+再往下找到位於其下的\shell\open\command 的資料,其內容為"C:\WINDOWS\NOTEPAD.EXE %1",
+
+                                                    ---> "c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\ssms.exe" /dde
+
+
+這個意思就是開啟txt檔的預設程式為NOTEPAD.EXE (記事本) ,而其後的 %1則在你雙擊檔案後,
+者%1會被該檔所取代.換句話說如果你希望將txt檔的開啟方式改為使用word開啟,
+那只要將上述的資料改為"C:\..\Microsoft Office\Office\WINWORD.EXE",啟動word就可以了.
+
+也就是說修改command內開啟程式的資料,我們就可以變更副檔名的開啟方式
+
+因此下次當你想要更改檔案的開啟執行方式,或是因為安裝了某些軟體後造成檔案的開啟程式被改變了,
+而想要再變更回原來的開啟方式,那依上述的方式去修改Registry檔,就可以了
+
+Microsoft SQL Server Query File

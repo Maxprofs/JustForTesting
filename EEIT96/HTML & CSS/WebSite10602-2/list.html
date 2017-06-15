@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>清單項目</title>
+	<meta charset="utf-8" />
+    <style>
+        .list {
+            list-style-type:upper-alpha;
+        }
+        .list1 {
+            list-style-type:none;
+            list-style-image:url('images/arrow1.png');
+        }
+        .list2 {
+            list-style-type:none;
+            list-style-image:url('images/arrow2.png');
+        }
+        .in {
+            background-color:white;
+            list-style-position:inside;
+        }
+        .out {
+            background-color:white;
+            list-style-position:outside;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list" style="background-color:yellow;">
+        <li>唐詩</li>
+        <li style="background-color:orange;">宋詞
+            <ul class="list1">
+                <li>歐陽修</li>
+                <li>李清照
+                    <ol class="list2" style="background-color:pink;">
+                        <li class="in">菩薩蠻</li>
+                        <li>一剪梅</li>
+                        <li class="out">如夢令</li>
+                    </ol>
+                </li><!--end 李清照-->
+            </ul>
+        </li><!--end 宋詞-->
+        <li>元曲</li>
+    </ul>
+    <ol>
+        <li>軟體設計精修班</li>
+        <li>就業養成班</li>
+        <li></li>
+    </ol>
+    <h2>台灣黑熊</h2>
+    <dl>
+        <dt>俗名:</dt>
+        <dd>狗熊</dd>
+        <dd>白喉熊</dd>
+        <dt>分類:</dt>
+        <dd>食肉目</dd>
+        <dd>熊科</dd>
+        <dt>分布:</dt>
+        <dd>全島海拔一千~三千五百公尺 森林地帶均有分布</dd>
+    </dl>
+</body>
+</html>

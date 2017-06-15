@@ -1,0 +1,24 @@
+
+
+p8 更 TCL ( Transaction Control Language ) :
+   錯 TCL ( Taransaction Control Language )
+             ^ 多一個 a
+
+p32 更 3.  C:\>    輸入   sqlcmd  -E  -i C:\T-SQL\lab.sql  
+    錯 3.  C:\>    輸入   sqlcmd  -E  -I C:\T-SQL\lab.sql  
+                                       ^ 小寫 i
+
+p54 更 LIKE 萬用字元搜尋 (wildcard searches)
+    錯 LIKE 萬用字元搜尋 (whildcard searches)
+                           ^ 多一個 h     
+   
+
+p79 移去方格中第3,4行
+    INT   VARCHAR
+    DATE  VARCHAR
+
+P111  原ON 改 AND
+
+0.
+
+..000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
