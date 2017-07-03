@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 create procedure gen_seats
 @v_ptime varchar(20),
 @v_movie int,
@@ -43,3 +44,5 @@ set @x_row+=1;
 end;
 end;
 end;
+=======
+>>>>>>> 07546819eb44cd54f66e7999d0a75f837f02529a

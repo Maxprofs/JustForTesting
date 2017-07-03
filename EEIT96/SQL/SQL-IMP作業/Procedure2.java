@@ -6,6 +6,7 @@ import java.sql.SQLException;
 public class test4132 {
 
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		String url="jdbc:sqlserver://localhost:1433;databaseName=SQLIMP";
 		try{
 			Connection conn=DriverManager.getConnection(url,"sa","passw0rd");
@@ -21,7 +22,28 @@ public class test4132 {
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
+=======
+		Connection conn = null;
+		try {
+			String url = "jdbc:sqlserver://localhost:1433;databaseName=jdbc";
+			conn = DriverManager.getConnection(url, "sa", "passw0rd");
 
+			// String sql = "insert into playlists values('2016-12-25 13:00',1,'A廳' )";
+			CallableStatement cstmt = conn.prepareCall("{call gen_seats(?,?,?)}");
+			cstmt.setString(1, "2016-12-25 13:00");
+			cstmt.setInt(2, 1);
+			cstmt.setString(3, "A廳");
+			cstmt.execute();
+			
+			System.out.println("A廳座位已排好");
+
+			cstmt.close();
+			conn.close();
+>>>>>>> 07546819eb44cd54f66e7999d0a75f837f02529a
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
