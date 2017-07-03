@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Procedure1 {
+public class Procedure1_v2 {
 
 	public static void main(String[] args) {
 		Connection conn = null;
@@ -14,7 +14,7 @@ public class Procedure1 {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			conn = DriverManager.getConnection(url, "sa", "passw0rd");
 
-			String sqlCmd = "insert into playlist values('2016-12-25 13:00',1,'AÆU')";
+			String sqlCmd = "insert into playlist values('2016-12-25 13:00',1,'Aï¿½U')";
 			PreparedStatement pstmt = conn.prepareStatement(sqlCmd);
 			pstmt.executeUpdate();
 

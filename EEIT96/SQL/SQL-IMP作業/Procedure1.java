@@ -6,19 +6,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class lab2_2movieSeats {
+public class Procedure1 {
 
 	public static void main(String[] args) {
 		
 		final String DB_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-		final String DB_URL = "jdbc:sqlserver://localhost:1433;databaseName=sqlhomework";
+		final String DB_URL = "jdbc:sqlserver://localhost:1433;databaseName=SQLIMP";
 		
 		try {
 			Class.forName(DB_DRIVER);
 			
 			Connection conn = DriverManager.getConnection(DB_URL, "sa", "passw0rd");
 			
-			String sqlCmd = "INSERT INTO playlist VALUES ('2016-12-25 13:00', 1, 'AÆU')" ;
+			String sqlCmd = "INSERT INTO playlist VALUES ('2016-12-25 13:00', 1, 'Aï¿½U')" ;
 			
 			PreparedStatement pstmt = conn.prepareStatement(sqlCmd);
 			
