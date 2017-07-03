@@ -3,7 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class test4132 {
+public class Procedure2{
 
 	public static void main(String[] args) {
 		final String url = "jdbc:sqlserver://localhost:1433;databaseName=SQLIMP";
