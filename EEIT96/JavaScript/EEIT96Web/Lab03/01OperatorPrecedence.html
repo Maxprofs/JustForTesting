@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>01OperatorPrecedence.html</title>
+    <script>
+        //++ 遞增 --遞減
+        var a = 1;
+        //a++;
+        //++a;
+        //a = a + 1;       
+        //document.write("a=" + a + "<br>");  //a=2
+        a = 1;
+        var b = 10 * ++a;
+        document.write("a=" + a + "<br>");  //a=2
+        document.write("b=" + b + "<br>");  //b=20
+
+
+        //三元運算子
+        var x =10;
+        var b = x > 0 ? x : -1;
+        document.write("b=" + b + "<br>");
+
+       
+        //operator precedence
+        //== !=  兩邊轉換為同一型別，再比較值是否相等
+        //=== !== 會比對值及資料型態是否一致
+        var i = 10, j="10";
+        console.log(i == j);    //true
+        console.log(i === j);  //false
+    </script>
+</head>
+<body>
+
+</body>
+</html>
