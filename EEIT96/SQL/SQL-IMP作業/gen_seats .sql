@@ -1,9 +1,16 @@
 
 begin
+declare @_roomid varchar(10);
+declare @v_ptime varchar(12);
+declare @v_movie int;
 declare @v_row int;
 declare @v_col int;
 declare @x_row int;
 declare @x_col int;
+
+set @_roomid='AÆU'
+set @v_ptime='2016-12-25'
+set @v_movie=1;
 
 if(@_roomid='AÆU')
 begin

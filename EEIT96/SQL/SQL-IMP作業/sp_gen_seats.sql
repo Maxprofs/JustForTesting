@@ -1,4 +1,4 @@
-alter procedure gen_seats
+create procedure gen_seats
 @v_ptime varchar(20),
 @v_movie int,
 @_roomid varchar(10)
