@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>99乘法表</title>
+<style>
+  table{
+    border:1px solid #3399ff;
+    background-color: #3399ff;
+    margin:0px;
+    padding:0px;
+  }
+  td{
+    background-color: #b3e6ff;
+    text-align: center;
+    color:orangered;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 3px;
+    border:1px solid #b3e6ff;
+    vertical-align: middle;
+  }
+
+    </style>
+    <script>
+document.write("<table>"); 
+document.write("<tr>");
+      for(var i=2;i<=9;i++){
+      document.write("<td>");
+        for(var j=1;j<=9;j++){
+          document.write(i+" * "+j+" = "+("0" + i*j).slice(-2)+"<br>");
+
+       }
+       }
+       document.write("<tr>");
+     document.write("</table>");
+    </script>
+  </head>
+
+  <body>
+
+  </body>
+
+</html>
