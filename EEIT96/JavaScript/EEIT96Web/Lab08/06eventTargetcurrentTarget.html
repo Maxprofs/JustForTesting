@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>06eventTargetcurrentTarget.html</title>
+    <script>
+        window.onload = function () {
+            document.getElementById("idp").onclick = clickP; //事件繫結，事件氣泡(bubbling)
+            document.getElementById("idbut").onclick = clickBut;
+        };
+
+        //target：回傳觸發事件的元素
+        //currentTarget：回傳事件正在處理時所在的元素
+        function clickP() {
+            alert("p");  
+        }
+
+        function clickBut() {
+            alert("input"); 
+
+        }
+    </script>
+</head>
+<body>
+    <p id="idp">
+       <input type="button" id="idbut" value="button" />            
+    </p>
+</body>
+</html>

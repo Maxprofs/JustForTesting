@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>07eventBubble.html</title>
+    <script>
+        window.onload = function () {
+            document.onclick = docClick;
+            document.getElementById("iddiv").onclick = divClick; //事件繫結，事件氣泡(bubbling)
+            document.getElementById("idp").onclick = pClick;
+            //document.getElementById("idhref").onclick = hrefClick;
+        };
+
+        function docClick() {
+            window.alert("Document");
+        }
+
+        //取消事件氣泡(bubbling)
+        function divClick(nsEvent) {
+            window.alert("div");
+            
+        }
+
+        function pClick() {
+            window.alert("p");
+        }
+
+        function hrefClick() {
+            
+        }
+
+    </script>
+</head>
+<body>
+    <div id="iddiv">
+		div
+		<p id="idp">ppppp</p>
+	</div>
+    <a id="idhref" href="http://tw.yahoo.com" >YAHOO</a>
+</body>
+</html>

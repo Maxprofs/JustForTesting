@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>04eventHandlerFocusBlur.html</title>
+    <script>
+        window.onload = function () {            
+            document.getElementById("idinput").onblur = blur;  //事件繫結，焦點離開
+            document.getElementById("idinput").onfocus = focus;  //事件繫結，取得焦點
+            document.getElementById("idinput").onchange = change;  //事件繫結，改變內容
+            document.getElementById("idName").onblur = ckName;  //事件繫結，焦點離開
+        }                     
+
+        //slide 72
+        //文件外觀 : bgColor(background color)背景顏色 , 
+        //           fgColor(foreground color)前景顏色即文件上的文字顏色
+
+        function blur() {
+            document.bgColor = "blue";
+        }
+
+        function focus() {
+            document.bgColor = "green";
+        }
+
+        function change() {
+            document.fgColor = "yellow";
+            document.getElementById("idinput").style.color = "red";
+        }
+
+        function ckName() {
+            var theName = document.getElementById("idName").value;
+            if (theName == "")
+                //alert("you must enter");
+                document.getElementById("idsp").innerHTML =
+                    "<img src='Images/error.png' /><span style='color:red'>you must enter</span>";
+                //document.getElementById("idName").insertAdjacentHTML
+                //    ("AfterEnd", "<img src='Images/error.png' /><span style='color:red'>you must enter</span>");
+            else
+                //alert("correct");
+                document.getElementById("idsp").innerHTML = "correct";
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="idinput" value="click here change bgColor"/>
+	<h1>this is h1</h1>
+    <hr />
+    name:<input type="text" id="idName" />
+    <span id="idsp" style="color:red"></span>
+    <br />
+    password:<input type="password" id="idPwd" />
+    
+</body>
+</html>

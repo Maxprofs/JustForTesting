@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>01ad.html</title>
+    <script>
+        var t=window.setTimeout(window.close, 2000);
+        function f() {
+            location.href = "http://tw.yahoo.com";
+        }
+        //window.setTimeout(f, 2000);
+        window.onload=function () {
+            document.getElementById("idbutself").onclick = selff;  //事件繫結
+            document.getElementById("idbuthref").onclick=hreff;
+            document.getElementById("idbutstop").onclick=stopf;
+        };
+        function selff() {
+            //關閉視窗
+            window.close();
+        }
+        function hreff() {
+            //轉向連結到01a.html
+            location.href = "01a.html";
+        }
+        function stopf() {
+            //停止計時器
+            window.clearTimeout(t);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="idbutself" value="關閉自己" />	
+	<input type="button" id="idbuthref" value="goto 01a.html" />
+	<input type="button" id="idbutstop" value="停止關閉" />
+</body>
+</html>

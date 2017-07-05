@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>07arrayObject.html</title>
+    <script>
+        ////建立陣列語法 1        
+        var balls = new Array();
+        //alert(balls.length);
+        balls[0] = "basketball";
+        balls[1] = "baseball";
+        balls[2] = "tennis";
+        balls[3] = "volleyball";
+        balls[4] = 123;       
+        //alert(balls.length);
+        //列印陣列語法 1
+        //document.write(balls);
+
+
+        //建立陣列語法 2
+        var balls2 = new Array("basketball", "baseball", 123);
+        //document.write(balls2);
+
+        //函數實字
+        //建立陣列語法 3
+        var balls3 =["basketball", "baseball","tennis", 123];  //array literal
+        //document.write(balls3);
+
+
+        //列印陣列語法 2 -- 使用 for loop
+        for (var i = 0; i < balls3.length; i++) {
+            //document.write("balls3[" + i + "]=" + balls3[i] + "<br>");
+        }
+
+
+        //列印陣列語法 3 -- 使用 for in 
+        //for(obj in arrary|object)
+        for (var obj in balls3) {
+            //document.write("balls3[" + obj + "]=" + balls3[obj] + "<br>");
+        }
+
+
+       
+        var balls = ["basketball", "baseball", "tennis", "volleyball", 123];
+        balls.push("itemx");
+        //alert(balls);
+        //balls.pop();
+        delete balls[5];
+        //alert(balls);
+
+            document.write("join('-')="+balls.join("-")+"<br>");
+            document.write("reverse().join('=>')="+balls.reverse().join("=>")+"<br>");
+            document.write("sort()="+balls.sort()+"<br>");
+     
+    </script>
+</head>
+<body>
+
+</body>
+</html>

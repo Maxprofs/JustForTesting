@@ -70,17 +70,16 @@
         //方法呼叫
         document.write(personal.print2() + "<br>");
         //=============================
-
-
+        
 
         //==========檢查是否有此方法，是否支援此方法，以達到跨連覽器==================
         document.write(personal.print2 + "<hr>");
         document.write(personal.print + "<hr>");
 
-        //if (personal.printx)
-        //    window.alert("support!!");
-        //else
-        //    window.alert("not support!!");
+        if (personal.print)
+            window.alert("support!!");
+        else
+            window.alert("not support!!");
 
         document.write(window.alertx);
 	</script>
