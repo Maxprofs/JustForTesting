@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Eighth</title>
+	<meta charset="utf-8" />
+    <!--<meta http-equiv="refresh" content="3; URL=Ninth.html">-->
+    <style>
+        *{
+            margin:0 auto;
+            padding:0;
+        }
+        .st{
+            display: inline-block;
+            position:absolute;
+            top:auto;
+            bottom:auto;
+            left:150px;
+            right:150px;
+            width:500px;
+            height:auto;
+            margin:auto;
+            border:4px double red;
+        }
+        .st1{
+            border-bottom:1px dashed grey;
+            margin:10px auto auto 50px;
+            width:350px;
+            padding-bottom:10px;
+            text-align:left;
+        }
+        .sub{
+            clear:left;
+            margin:10px auto;
+            text-align:center;
+        }
+        .t1{
+            float:left;
+            text-align:center;
+            padding-right:5px;
+            width:80px;
+        }
+        fieldset{
+            border:2px solid blue;
+            width:450px;
+            margin:10px auto;
+            padding:2px;
+            padding-bottom:10px;
+            border-radius:10px 10px 10px 10px;
+        }
+        legend{
+            font-size:1.25em;
+            text-decoration:underline;
+        }
+        #button1{
+            width:115px;
+            margin:5px auto auto auto;
+            background-color:palegreen;
+            color:orangered;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size:0.8em;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;margin:10px auto;">Form</h1>
+    <div class="st">
+
+        <form action="#" method="get" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Profile<em>(Mandatory)</em></legend>
+                <div class="st1">
+                    <label for="name1" class="t1">Full Name:</label><input type="text" name="name" id="name1" required="required" placeholder="Guest" maxlength="20" style="margin-left:10px;" autocomplete="off" autofocus/>
+                </div><div class="st1">
+                    <label for="password1" class="t1" style="margin-top:10px">Password:</label><input type="password" name="password" placeholder="At least 8 to 12 characters" pattern="(?=.*/d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" maxlength="12" min="8" id="password1" style="margin:10px auto 10px 10px" />
+                <br /><h7 style="font-size:12px;">*Must at least contain one number, one uppercase & lowercase letter.</h7><br />
+                </div><div class="st1" style="border:none;">
+                    <label class="t1">Gender:</label>
+                    <input type="radio" name="gender" value="male" style="margin:auto 3px auto 10px" /><label for="m1">Male</label>
+                    <input type="radio" name="gender" value="female" style="margin:auto 3px auto 10px" /><label for="f1">Female</label>
+                </div>
+                <div class="st1">
+                    <label class="t1">Region:</label>
+                    <select name="area" style="margin:auto 3px auto 10px;" >
+                        <option value="tapei">Taipei</option>
+                        <option value="taichung">Taichung</option>
+                        <option value="gaoxiong">Gaoxiong</option>
+                    </select>
+                </div>
+            <div class="st1">
+                <label class="t1">Email:</label><input type="email" name="email1" style="margin:auto 3px 5px 10px;"required="required"/><br />
+                <label class="t1">Tel:</label><input type="tel" name="tel1" style="margin:auto 3px auto 10px;width:100px;"maxlength="13" required="required"/>
+            </div>
+            </fieldset><fieldset>
+                <legend>Questions</legend>
+                <div class="st1" style="border:none;text-align:center;margin:10px auto 0 auto;">
+                    <input type="checkbox" name="questions" id="suggestion1" value="suggest" /><label for="suggestion1">Suggest</label>
+                    <input type="checkbox" name="questions" id="inquiry1" value="inquiry" /><label for="inquiry1">Inquiry</label>
+                    <input type="checkbox" name="questions" id="contact" value="contact" /><label for="booking1">Contact</label>
+                </div>
+                <div class="st1" style="border:none;margin:auto;">
+                    <label class="t1" for="files" style="width:60px;border:1px solid grey;margin-right:5px;border-radius:7px;">Browse</label>Upload files here
+                    <input type="file" id="files" style="margin:auto;visibility:hidden" name="upload1" />
+                </div>
+                <div class="st1" style="border:none;margin:0 auto 0 auto;">
+                    <label for="comment1" class="t1">Comments:</label><textarea cols="47" rows="5" name="comments" maxlength="50" id="comment1" required="required"></textarea>
+                </div>
+            </fieldset>
+            <div class="sub">
+                <input type="submit" value="Submit" />
+                <input type="reset" value="Reset" /><br />
+                <a href="First.html"><input type="button" name="button1" id="button1" value="HTML Intro" /></a>
+                <a href="Second.html"><input type="button" name="button2" id="button1" value="Listing" /></a>
+                <a href="Third.html"><input type="button" name="button3" id="button1" value="Hyperlink&Image" /></a>
+                <a href="Forth.html"><input type="button" name="button4" id="button1" value="CSS selector" /></a>
+                <a href="Fifth.html"><input type="button" name="button5" id="button1" value="Hyperlink Selector" /></a>
+                <a href="Sixth.html"><input type="button" name="button6" id="button1" value="Block Model" /></a>
+                <a href="Seventh.html"><input type="button" name="button7" id="button1" value="Table" /></a>
+
+            </div>
+        </form>
+    </div>
+    <div style="border:2px solid black;text-align:left;position:absolute;width:250px;margin-left:20px;padding:10px;">
+        <form action="#" method="get">
+            Date<input type="date" name="date1" style="margin:5px 10px;"/><br />
+            Datetime-local<input type="datetime-local" name="date2" style="margin:5px 10px;"/><br />
+            Month<input type="month" name="month1" style="margin:5px 10px;"/><br />
+            Time<input type="time" name="time1" style="margin:5px 10px;"/><br />
+            Week<input type="week" name="week1" style="margin:5px 10px;"/><br />
+            Url<input type="url" name="url1" style="margin:5px 10px;"/><br />
+            Search<input type="search" name="search1" style="margin:5px 10px;"autocomplete="on" />
+            Color<input type="color" name="color1" style="margin:5px 10px;"/><br />
+            Range<input type="range" name="range1" style="margin:5px 10px;"/><br />
+            Number<input type="number" name="number1" min="0" max="120" step="2" style="margin:5px 10px;"/><br/>
+            <label>Homepage:</label><input name="hp" type="url" list="hpurls" value="http://" />
+            <datalist id="hpurls">
+                <option value="http://www.pchome.com.tw"> Pchome</option>
+                <option value="http://www.google.com.tw">Google</option>
+                <option value="http://www.facebook.com">Facebook</option>
+            </datalist>
+        </form>
+    </div>
+</body>
+</html>

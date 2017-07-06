@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        @import url(Style/Test1.css);
+    </style>
+    <script>
+        window.onload=function (){
+            document.getElementById("home").onclick = InnerHome;
+            document.getElementById("99").onclick = InnerMT99;
+            document.getElementById("register").onclick = InnerRegister;
+            document.getElementById("score").onclick = InnerScore;
+            //document.getElementById("photo1").onclick = InnerPhoto;
+            //document.getElementById("calendar1").onclick = InnerCalendar;
+            document.getElementById("Login1").onclick = InnerLogin;
+
+
+            function InnerHome() {
+                document.getElementById("mainFrame").innerHTML = "<h2 class='title' id='h2' value='title'>A little bit about me</h2><section><iframe width='725' height='360' src='Index.html' resize='0' scrolling='no' style='border:none;' ></iframe></section>"
+            };
+            
+            function InnerMT99() {
+                document.getElementById("mainFrame").innerHTML = "<h2 class='title' id='h2' value='title'>99 乘法表</h2><section><iframe width='725' height='360' src='SubTabs/MT9x9.html' resize='0' scrolling='no' style='border:none;' ></iframe></section>"
+            };
+
+            function InnerRegister() {
+                document.getElementById("mainFrame").innerHTML = "<h2 class='title' id='h2' value='title'>申請帳號</h2><section><iframe width='725' height='360' src='SubTabs/Registration.html' resize='0' scrolling='yes' style='border:none;' ></iframe></section>"
+            };
+
+            function InnerScore() {
+                document.getElementById("mainFrame").innerHTML = "<h2 class='title' id='h2' value='title'>請給我的網站打分</h2><section><iframe width='725' height='360' src='SubTabs/Score.html' resize='0' scrolling='no' style='border:none;' ></iframe></section>"
+            };
+
+            //function InnerPhoto() {
+            //    document.getElementById("mainFrame").innerHTML = "<h2 class='title' id='h2' value='title'>圖鑒</h2><section><iframe width='725' height='360' src='Index.html' resize='0' scrolling='no' style='border:none;' ></iframe></section>"
+            //};
+
+
+            //function InnerCalendar() {
+            //    document.getElementById("mainFrame").innerHTML = "<h2 class='title' id='h2' value='title'>日曆</h2><section><iframe width='725' height='360' src='Index.html' resize='0' scrolling='no' style='border:none;' ></iframe></section>"
+            //};
+
+
+            function InnerLogin() {
+                document.getElementById("mainFrame").innerHTML = "<h2 class='title' id='h2' value='title'>登入</h2><section><iframe width='725' height='360' src='SubTabs/Register.html' resize='0' scrolling='yes' style='border:none;' ></iframe></section>"
+            };
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="fullpage">
+        <header>
+            <nav>
+                <div class="panel">
+                    <div class="dropdown">
+                        <a href="#" id="home" class="dropbtn">Home</a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Homework</button>
+                        <div class="dropdown-content">
+                            <a href="#" id="99">99乘法表</a>
+                            <a href="#" id="register">申請帳號</a>
+                            <a href="#" id="score">打分</a>
+                            <a href="#" id="photo1">圖鑒</a>
+                            <a href="#" id="calender1">日曆</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Links</button>
+                        <div class="dropdown-content">
+                            <a href="http://www.yahoo.com.tw">Yahoo</a>
+                            <a href="http://www.google.com.tw">Google</a>
+                            <a href="http://www.facebook.com.tw">Facebook</a>
+                            <a href="http://www.pchome.com.tw">PChome</a>
+                            <a href="http://www.youtube.com">Youtube</a>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#" id="Login1" class="login" style="float:right;margin-right:20px;">&gt;Login&lt;</a>
+                    </div>
+                    <img src="Images/Forest cropped.jpg" title="Forest" name="Forest" />
+                </div>
+            </nav>
+        </header>
+        <main id="mainFrame" style="width:750px;border-right:1px solid black;float:left;height:410px;">
+            <h2 class='title' id='h2' value='title'>Welcome to my world</h2>
+
+            <h3 style="font-family:anchor;font-size:4em;margin:2em 0.8em auto auto;text-align:center;text-decoration-line:underline;color:seagreen;float:right">And This is Me</h3>
+
+            <img src="Images/dog.jpg" width="350" style="float:none;margin:auto;" />
+        </main>
+        <aside style="display:block;width:249px;margin:0 auto;float:right;">
+            <h2 class="title" style="text-align:center;">HTML Links~</h2>
+            <div class="btnGroup">
+                <a href="HTML/First.html" target="_blank"><input type="button" name="button1" id="button1" value="HTML Intro" /></a>
+                <a href="HTML/Second.html" target="_blank"><input type="button" name="button2" id="button1" value="Listing" /></a>
+                <a href="HTML/Third.html" target="_blank"><input type="button" name="button3" id="button1" value="Hyperlink&Image" /></a>
+                <a href="HTML/Forth.html" target="_blank"><input type="button" name="button4" id="button1" value="CSS selector" /></a>
+                <a href="HTML/Fifth.html" target="_blank"><input type="button" name="button5" id="button1" value="Hyperlink Selector" /></a>
+                <a href="HTML/Sixth.html" target="_blank"><input type="button" name="button6" id="button1" value="Block Model" /></a>
+                <a href="HTML/Seventh.html" target="_blank"><input type="button" name="button7" id="button1" value="Table" /></a>
+                <a href="HTML/Eighth.html" target="_blank"><input type="button" name="button8" id="button1" value="Form" /></a>
+                <a href="HTML/Ninth.html" target="_blank"><input type="button" name="button9" id="button1" value="Iframe" /></a>
+                <a href="HTML/Tenth.html" target="_blank"><input type="button" name="button10" id="button1" value="Unsupport Coding" /></a>
+            </div>
+        </aside>
+        <footer>
+            <div class="copyright" style="text-align:center;">
+                <p style="font-size:0.9em;"><a href="matilto:aaa@gmail.com">E-amil:aaa@gmail.com</a> &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; </p><p style="font-size:0.5em;"> &copy;2014 All Rights Reserved Quality Art Technology CO. </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+   <div id="fullpage" style="border:1px solid red">
+  <iframe name="topFrame" width="1000px" height="295px" src="homepage.html" frameBorder="0" frameSpace="none" scrolling="No" style="border:1px solid black;margin:0;"></iframe>
+  <iframe name="leftFrame" width="745px" height="500px" src="homepage.html" frameBorder="0" frameSpace="none" style="border:1px solid black;margin:0;float: left;"></iframe>
+    <iframe name="rightFrame" width="246px" height="500px" src="Index.html" frameBorder="0" frameSpace="none" style="border:1px solid black;margin:0;float: right;" ></iframe>
+</div>
+<script>
+@import url(Style/Test1.css);
+</script>
+        </head>
+
+      <body>
+
+      </body>
+
+      </html>
