@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        div#gHolder {
+            width: 650px;
+            height: 340px;
+            margin 0 auto 0 50px;
+            background-color: lightslategray;
+            padding: 5px;
+        }
+
+        div#theBigImageHolder {
+            width: 450px;
+            height: 300px;
+            background-color: black;
+            float: left;
+            padding: 2px;
+            margin: 5px;
+        }
+
+            div#theBigImageHolder > img {
+                width: 450px;
+                height: 300px
+            }
+
+        div#column1 {
+            width: 85px;
+            height: 336px;
+            margin-right: 5px;
+            margin-top: 2px;
+            background-color: black;
+            float: right;
+        }
+
+            div#column1 > img {
+                height: 80px;
+                width: 80px;
+                float: right;
+                display: block;
+                margin: 2px;
+                padding: 0px;
+                transition: border-radius 0.3s linear 0s;
+            }
+
+                div#column1 > img:hover {
+                    border-radius: 100px;
+                    cursor: pointer;
+                }
+
+        div#column2 {
+            width: 85px;
+            height: 336px;
+            margin-top: 2px;
+            background-color: black;
+            float: right;
+        }
+
+            div#column2 > img {
+                height: 80px;
+                width: 80px;
+                float: left;
+                display: block;
+                margin: 2px;
+                padding: 0px;
+                transition: border-radius 0.3s linear 0s;
+            }
+
+                div#column2 > img:hover {
+                    border-radius: 100px;
+                    cursor: pointer;
+                }
+
+        div#buttonHolder > input {
+            font-size: 1em;
+            background-color: white;
+            border: 1px solid green;
+            border-radius: 4px;
+            opacity: 0.8;
+        }
+
+            div#buttonHolder > input:hover {
+                cursor: pointer;
+                font-size: 1.1em;
+                border-color: red;
+            }
+
+        div#buttonHolder {
+            margin-left: 150px;
+            margin-top: 310px;
+        }
+    </style>
+    <script type="text/javascript">
+
+
+window.onload = function(){
+
+var mainImage = document.getElementById("bigImage");
+var coln1Image = document.getElementById("column1").getElementsByTagName("img");
+var coln2Image = document.getElementById("column2").getElementsByTagName("img");
+var thumbnailImages= [coln1Image[0],coln1Image[1],coln1Image[2],coln1Image[3],coln2Image[0],coln2Image[1],coln2Image[2],coln2Image[3] ];
+var j = 0;
+var stillTimer=null;
+
+//play button
+document.getElementById("play").onclick=function(){
+clearInterval(stillTimer);
+        stillTimer = setInterval(function(){
+                j = (j < 7) ? ++j : 0 ;
+                mainImage.src = thumbnailImages[j].src;
+            }, 1000);
+
+};
+
+//pause button
+document.getElementById("pause").onclick=function() {
+	clearInterval(stillTimer);
+	};
+
+//previous button
+document.getElementById("previous").onclick=function() {
+if(stillTimer!=null){
+clearInterval(stillTimer);
+}
+	j = (j >0) ? --j: 7 ;
+                mainImage.src = thumbnailImages[j].src;
+};
+
+//next button
+document.getElementById("next").onclick=function() {
+if(stillTimer!=null){
+clearInterval(stillTimer);
+}
+	j = (j <7) ? ++j : 0 ;
+                mainImage.src = thumbnailImages[j].src;
+}
+}
+
+//images click & display
+function imgFunc(){
+
+var bigImage = document.getElementById("bigImage");
+var coln1= document.getElementById("column1");
+var coln2= document.getElementById("column2");
+var imgCount=coln1+coln2;
+
+coln1.addEventListener("click",function (event) {
+	if(event.target.tagName=="IMG"){
+	bigImage.src=event.target.src;
+	}
+},false)
+
+coln2.addEventListener("click",function (event) {
+	if(event.target.tagName=="IMG"){
+	bigImage.src=event.target.src;
+	}
+},false)
+}
+
+//check for browser version
+if(addEventListener){
+window.addEventListener("load",imgFunc,false);
+}else {
+	window.attachEvent("load",imgFunc);
+}
+
+    </script>
+</head>
+<body>
+    <div id="gHolder">
+        <div id="theBigImageHolder">
+            <img src="Images/01.jpg" id="bigImage" value="00" />
+        </div>
+        <div id="column1">
+            <img src="Images/01.jpg" />
+            <img src="Images/02.jpg" />
+            <img src="Images/03.jpg" />
+            <img src="Images/04.jpg" />
+        </div>
+        <div id="column2">
+            <img src="Images/05.jpg" />
+            <img src="Images/06.jpg" />
+            <img src="Images/07.jpg" />
+            <img src="Images/08.jpg" />
+        </div>
+        <div id="buttonHolder">
+            <input type="button" id="previous" value="<<" />
+            <input type="button" id="pause" value="||" />
+            <input type="button" id="play" value="Play" />
+            <input type="button" id="next" value=">>" />
+        </div>
+    </div>
+</body>
+</html>

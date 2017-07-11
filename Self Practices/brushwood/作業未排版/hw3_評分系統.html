@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        .lightoff {
+            -webkit-filter: grayscale(1);
+        }
+
+        .lighton {
+            -webkit-filter: grayscale(0);
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+
+            var stars = document.getElementsByName("star");
+
+            for (var i = 0; i < stars.length ; i++) {
+                stars[i].onmouseover = function () { mouseOver(this.id) };
+                stars[i].onmouseout = function () { mouseOut(this.id) };;
+                stars[i].onclick = function () { Click(this.id) };
+            }
+
+        }
+
+        function mouseOver(starid) {
+            var stars = document.getElementsByName("star");
+            for (var i = 0; i <= starid.substr(4); i++) {
+                stars[i].className = "lighton";
+            }
+        }
+
+
+        function mouseOut(starid) {   
+            document.getElementsByName("star").className = "lightoff";
+            var stars = document.getElementsByName("star");
+            //ClearAll();
+            //alert(starid)
+            for (var i = 0; i <= starid.substr(4); i++) {  
+                stars[i].className = "lightoff";
+            }
+        }
+
+
+        function Click(starid) {
+            for (var i = 0; i <= starid.substr(4); i++) {
+                document.getElementById("rating").innerHTML = parseInt(i + 1) + "顆星";
+            }
+        }
+        //function ClearAll() {
+        //    document.getElementsByName("star").className = "lightoff";
+        //}
+    </script>
+</head>
+<body>
+    <div style=" display:inline-block ; ">
+        <img id="star0" name ="star" class="lightoff" src="Images/chngstar.gif" />
+        <img id="star1" name ="star" class="lightoff" src="Images/chngstar.gif" />
+        <img id="star2" name ="star" class="lightoff" src="Images/chngstar.gif" />
+        <img id="star3" name ="star" class="lightoff" src="Images/chngstar.gif" />
+        <img id="star4" name ="star" class="lightoff" src="Images/chngstar.gif" />
+    </div>
+   <br />
+   <span id="rating" style="font-size:2em"></span>
+   
+</body>
+</html>

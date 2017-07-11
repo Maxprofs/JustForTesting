@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700" rel="stylesheet" />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <style>
+        .adcarousell {
+            height: 600px;
+            width: 550px;
+            margin: auto;
+            padding: 5px;
+            background-color: rgba(183, 189, 189, 0.25);
+            border: solid 2px rgba(183, 189, 189, 0.80);
+        }
+
+        .mainpic img {
+            height: 500px;
+            width: 360px;
+            float: right;
+            margin: 2px;
+            padding: 0px;
+            padding-top: 10px;
+        }
+
+        .col1 {
+            height: 400px;
+            width: 55px;
+            float: left;
+            margin: 2px;
+            padding: 0px;
+            padding-top: 30px;
+            transition: border-radius 0.3s linear 0s;
+        }
+
+            .col1 img {
+                height: 80px;
+                width: 50px;
+                float: left;
+                display: block;
+                margin: 2px;
+                padding: 0px;
+            }
+
+        .col2 {
+            height: 400px;
+            width: 55px;
+            float: left;
+            margin: 2px;
+            padding: 0px;
+            padding-top: 30px;
+            transition: border-radius 0.3s linear 0s;
+        }
+
+            .col2 img {
+                height: 80px;
+                width: 50px;
+                float: left;
+                display: block;
+                margin: 2px;
+                padding: 0px;
+            }
+
+        .mainmenu {
+            height: 520px;
+            width: 550px;
+            background-color: aqua;
+        }
+
+        .playbar {
+            width: 200px;
+            height: 45px;
+            margin: 2px;
+            margin-right: 70px;
+            float: right;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+
+            var mainpic = document.getElementById("mainpic");
+            var col1 = document.getElementById("col1").getElementsByTagName("img");
+            var col2 = document.getElementById("col2").getElementsByTagName("img");
+            var thumbnailImages = [col1[0], col1[1], col1[2], col1[3], col1[4], col2[0], col2[1], col2[2], col2[3], col2[4]];
+            var i = 0;
+            var stillTimer = null;
+
+        //play button
+        document.getElementById("play").onclick = function () {
+            clearInterval(stillTimer);
+            stillTimer = setInterval(function () {
+                i = (i < 9) ? ++i : 0;
+                mainpic.src = thumbnailImages[i].src;
+            }, 1000);
+
+        };
+
+        //pause button
+        document.getElementById("pause").onclick = function () {
+            clearInterval(stillTimer);
+        };
+
+        //previous button
+        document.getElementById("previous").onclick = function () {
+            if (stillTimer != null) {
+                clearInterval(stillTimer);
+            }
+            i = (i > 0) ? --i : 9;
+            mainpic.src = thumbnailImages[i].src;
+        };
+
+        //next button
+        document.getElementById("next").onclick = function () {
+            if (stillTimer != null) {
+                clearInterval(stillTimer);
+            }
+            i = (i < 9) ? ++i : 0;
+            mainpic.src = thumbnailImages[i].src;
+        }
+}
+
+        //images click & display
+        function imgFunc() {
+
+            var mainpic = document.getElementById("mainpic");
+            var col1 = document.getElementById("col1");
+            var col2 = document.getElementById("col2");
+            var imgCount = col1 + col2;
+
+            col1.addEventListener("click", function (event) {
+                if (event.target.tagName == "IMG") {
+                    mainpic.src = event.target.src;
+                }
+            }, false)
+
+            col2.addEventListener("click", function (event) {
+                if (event.target.tagName == "IMG") {
+                    mainpic.src = event.target.src;
+                }
+            }, false)
+        }
+
+        //check for browser version
+        if (addEventListener) {
+            window.addEventListener("load", imgFunc, false);
+        } else {
+            window.attachEvent("load", imgFunc);
+        }
+    </script>
+</head>
+<body>
+    <div id="header-wrapper">
+        <div id="header" class="container">
+            <div id="logo">
+                <h1><a href="#">Brushwood</a></h1>
+                <div id="menu">
+                    <ul>
+                        <li class="current_page_item"><a href="首頁.html" accesskey="1" title="">首頁</a></li>
+                        <li><a href="hw1.html" accesskey="2" title="">HW1</a></li>
+                        <li><a href="hw2.html" accesskey="3" title="">HW2</a></li>
+                        <li><a href="hw3.html" accesskey="4" title="">HW3</a></li>
+                        <li><a href="hw4.html" accesskey="5" title="">HW4</a></li>
+                        <li><a href="hw5.html" accesskey="6" title="">HW5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page-wrapper">
+
+        <div class="adcarousell">
+
+            <div id="col1" class="col1">
+                <img src="Images/01.jpg" />
+                <img src="Images/02.jpg" />
+                <img src="Images/03.jpg" />
+                <img src="Images/04.jpg" />
+                <img src="Images/05.jpg" />
+            </div>
+            <div id="col2" class="col2">
+                <img src="Images/06.jpg" />
+                <img src="Images/07.jpg" />
+                <img src="Images/08.jpg" />
+                <img src="Images/09.jpg" />
+                <img src="Images/10.jpg" />
+            </div>
+            <div class="mainpic">
+                <img id="mainpic" src="Images/01.jpg" />
+            </div>
+
+            <div class="playbar">
+                <input type="image" src="images/left-arrow.png" id="previous" style="width:40px;height:40px;" />
+                <input type="image" src="images/play.png" id="play" style="width:40px;height:40px;" />
+                <input type="image" src="images/pause.png" id="pause" style="width:40px;height:40px;" />
+                <input type="image" src="images/right-arrow.png" id="next" style="width:40px;height:40px;" />
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
