@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+compileJava.options.encoding = 'UTF-8'
+sourceCompatibility = 1.7			//設定編譯階段的JDK版本
+sourceSets.main.java.srcDir 'src'	//使用src目錄放置Java程式原始碼
+									//預設位置是src/main/java目錄
+repositories {
+	mavenLocal()					//使用maven  local repository
+	mavenCentral()					//使用maven  central repository
+}
+dependencies {						//宣告dependency library
+	
+}
+
